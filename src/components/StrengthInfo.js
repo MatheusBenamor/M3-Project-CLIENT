@@ -10,11 +10,11 @@ export default function StrengthInfo({ cb }) {
         content={
           <div>
             <ul>
-              <li>What are our assets?</li>
-              <li>What is our strongest asset?</li>
-              <li>How is my business different from our competitors?</li>
-              <li>What unique resources do we have access to?</li>
-              <li>Do we have a sustainable competitive advantage?</li>
+              <li>What are your assets?</li>
+              <li>Can you speak a different language?</li>
+              <li>How is your business different from our competitors?</li>
+              <li>What unique resources do you have access to?</li>
+              <li>Do you have a sustainable competitive advantage?</li>
             </ul>
           </div>
         }

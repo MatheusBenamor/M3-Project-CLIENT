@@ -9,7 +9,13 @@ export default function WeaknessInfo({ cb }) {
         title="Figure Out Your Weaknesses"
         content={
           <div>
-            I can be triggered by click or hover (on devices with a mouse)
+            <ul>
+                <li>What tasks do you usually avoid because you don't feel confident doing them?</li>
+                <li>What are your negative work habits?</li>
+                <li>Are you completely confident in your education and skills? If not, where are you weakest?</li>
+                <li>Do you have problems working as a team member?</li>
+                <li>Do you have experience on your project area? </li>
+            </ul>
           </div>
         }
         disableHoverToClick
