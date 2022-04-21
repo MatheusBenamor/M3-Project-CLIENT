@@ -7,13 +7,12 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import SwotInfo from './components/SwotInfo';
+
 
 function App() {
   return (
     <>
     <h1 className="title">This is my Analysis SWOT app</h1>
-    <SwotInfo></SwotInfo>
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/login" element={<Login/>}/>
