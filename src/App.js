@@ -1,14 +1,28 @@
 import './styles/app.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom'
+import About from './pages/About';
+import Analysis from './pages/Analysis';
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
+import SwotInfo from './components/SwotInfo';
 
 function App() {
   return (
-    <div>
+    <>
     <h1 className="title">This is my Analysis SWOT app</h1>
-    <p>Signup and login goes here</p>
-    <br></br>
-    <p>What is analysis Swot</p>
-    <p>Vantages</p>
-    </div>
+    <SwotInfo></SwotInfo>
+    <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/signup" element={<Signup />} />
+    <Route path="/about" element={<About/>}/>
+    <Route path="/analysis" element={<Analysis/>}/>
+    <Route path="/profile" element={<Profile/>}/>
+    </Routes>
+    </>
   );
 }
 
