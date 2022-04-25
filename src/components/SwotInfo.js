@@ -1,3 +1,7 @@
+import React from "react";
+import Floater from "react-floater";
+import WithText from "./WithText";
+
 const SwotInfo = () => {
   return (
     <>
@@ -6,6 +10,7 @@ const SwotInfo = () => {
         <br></br>
         <p>What is analysis Swot</p>
         <p>Vantages</p>
+        <WithText></WithText>
       </div>
     </>
   );
