@@ -1,15 +1,16 @@
 import React from 'react'
 import SwotInfo from '../components/SwotInfo'
 import '../styles/home.css'
+import SignupForm from '../components/SignupForm'
 
 
 const Home = () => {
     return (
       <>
+      <div className='cont-info'><SwotInfo></SwotInfo></div>
       <div className="home-background">
-      <SwotInfo></SwotInfo>
-        <h1> This is my Home page </h1>
-      </div>
+      <div className='cont-signup'><SignupForm></SignupForm></div>
+            </div>
       </>
     )
   }

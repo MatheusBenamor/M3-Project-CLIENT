@@ -1,16 +1,15 @@
 import React from 'react'
+import '../styles/about.css'
 
   const About = () => {
     return (
-        <div id="about-us">
-            <figure className="content">
-                <img src={logo} alt="logo" />
-            </figure>
+        <div className="about-us">
+            
             <div className="content">
                 <h1 className="title">About us</h1>
                 <p>
-                    Our project was created by two aspiring Web Developers currently studying at the Ironhack's
-                    Bootcamp. Here you can make your own SOWT Analysis to help your business or personal life.
+                    The SWOT project was created by two aspiring Web Developers currently studying at the Ironhack's Bootcamp. 
+                    Our main goal is to make a platform that helps our clients to plan their business or personal life using swot analysis as a tool to better organize this process. 
                 </p>
                 <table className="table">
                     <thead>

@@ -2,6 +2,7 @@
     background-image: url(../images/istockphoto-1332829108-612x612\ \(1\).jpg);
     background-size: cover;
     background-repeat: no-repeat;
+   
 }
 
 body {
@@ -11,3 +12,22 @@ body {
     
 }
 
+.cont-signup {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 200px;
+    
+    
+}
+
+.cont-info {
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+    color: #2d2d2d;
+}
+
+.account-text{
+    margin-left: 70px;
+    color:aliceblue;
+}

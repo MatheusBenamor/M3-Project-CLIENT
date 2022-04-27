@@ -1,6 +1,7 @@
 import React from "react";
 import Floater from "react-floater";
 import styled from "styled-components";
+import ('../styles/home.css')
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -34,7 +35,7 @@ const FloaterFactory = ({
 );
 
 export default function WithText({ cb }) {
-  const Vantagens = (
+  const explanation = (
     <FloaterFactory
       cb={cb}
       text="What Is a SWOT Analysis?"
@@ -48,30 +49,35 @@ export default function WithText({ cb }) {
     />
   );
 
-  const semantics = (
+  const vantages = (
     <FloaterFactory
       cb={cb}
-      text="Uses of SWOT Analysis"
+      text="Benefits"
       content={
         <div>
-          <p>
-            SWOT Analysis is a tool that can help you to analyze what you do
-            best right now, and to develop a successful strategy for the future.
-            SWOT can also uncover areas that are holding you back.
-          </p>
+          
+          <ul>
+          <li>Understand your business better</li>
+          <li>Be aware of your weaknesses</li>
+          <li>Prevent possible threats</li>
+          <li>Capitalise on opportunities</li>
+          <li>Take full advantage of your strengths</li>
+          <li>Develop business goals and strategies for achieving them</li>
+         </ul>
+          
         </div>
       }
     />
   );
 
   return (
+    <>
     <Wrapper>
-      Far far {Vantagens}, behind the word mountains, far from the countries
-      Vokalia and Consonantia, there live the blind texts. Separated they live
-      in Bookmarksgrove right at the coast of the {semantics}, a large language
-      ocean. A small river named Duden flows by their place and supplies it with
-      the necessary regelialia. It is a paradisematic country, in which roasted
-      parts of sentences fly into your mouth.
+      <h1 className="white-container">{explanation}</h1>
+      </Wrapper>
+      <Wrapper>
+      <h1 className="white-container">{vantages}</h1>
     </Wrapper>
+    </>
   );
 }
