@@ -73,10 +73,10 @@ export default function WithText({ cb }) {
   return (
     <>
     <Wrapper>
-      <h1 className="white-container">{explanation}</h1>
+      <h2 className="white-container">{explanation}</h2>
       </Wrapper>
       <Wrapper>
-      <h1 className="white-container">{vantages}</h1>
+      <h2 className="white-container">{vantages}</h2>
     </Wrapper>
     </>
   );

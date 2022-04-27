@@ -87,7 +87,7 @@
    
   /* hide signup form */
   .login{
-    display: none;
+    display: flex;
   }
    
   /* Login form code */
