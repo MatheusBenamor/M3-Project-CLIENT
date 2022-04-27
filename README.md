@@ -3,11 +3,9 @@
 
 <img src="https://res.cloudinary.com/dqycgj4fq/image/upload/v1651003678/swot-analys-13_ycxkji.png" alt="SWOT COVER" />
 
-Backend Repository: [API Repository](https://github.com/MatheusBenamor/M3-Project-API).
-
 (Explicação do projeto)
 
-Frontend Repository: [Client Repository](https://github.com/MatheusBenamor/M3-Project-CLIENT).
+Backend Repository: [API Repository](https://github.com/MatheusBenamor/M3-Project-API).
 
 ## Technologies
 
