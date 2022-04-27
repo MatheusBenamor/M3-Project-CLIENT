@@ -7,7 +7,7 @@ const SignupForm = () => {
     return (
       <>
       <div class="container">
-    <div class="form">
+    <div class="form-signup">
       <div class="btn">
         <button class="signUpBtn">Sign up</button>
         

@@ -12,7 +12,7 @@
     align-items:center !important;
     
   }
-  .form{
+  .form-signup{
     width: 350px;
     height: 430px;
     background-color: rgba(41, 39, 39, 0.3);
@@ -43,14 +43,14 @@
     background-color: transparent;
     color: white;
   }
-  input:focus {
+  .form-signup input:focus {
     outline: none !important;
     border-bottom: 2px solid rgb(91, 243, 131);
     font-size: 17px;
     font-weight: bold;
     color: white;
   }
-  ::placeholder {
+  .form-signup ::placeholder {
     color: white;
   }
   .checkBox{
