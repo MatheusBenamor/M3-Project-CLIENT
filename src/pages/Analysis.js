@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/analysis.css'
-import WithHoverAndNoDelay from '../components/WithHoverNoDelay'
+//import WithHoverAndNoDelay from '../components/WithHoverNoDelay'
 import StrengthInfo from '../components/StrengthInfo'
 import WeaknessInfo from '../components/WeaknessInfo'
 import OpportunitiesInfo from '../components/OpportunitiesInfo'

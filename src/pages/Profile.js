@@ -11,7 +11,7 @@ const Profile = () => {
       <section className='sec-1'>
           <img
             className="profile-img"
-            src="https://res-console.cloudinary.com/dqycgj4fq/thumbnails/v1/image/upload/v1650967717/UHJvamVjdC1TV09ULzk1MzIzMzAzMTkxMDJ3X3l6eTQwbw==/folder_thumbnail/d18xMTcsaF84OCxjX3RodW1i"
+            src="https://res-console.cloudinary.com/dqycgj4fq/thumbnails/v1/image/upload/v1650967683/UHJvamVjdC1TV09UL2ltYWdlc19weHZ0NWY=/folder_thumbnail/d18xMTcsaF84OCxjX3RodW1i"
             alt="testimage"
           ></img>
           

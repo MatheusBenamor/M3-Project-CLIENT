@@ -1,5 +1,5 @@
 import React from "react";
-import Floater from "react-floater";
+//import Floater from "react-floater";
 import WithText from "./WithText";
 
 const SwotInfo = () => {
