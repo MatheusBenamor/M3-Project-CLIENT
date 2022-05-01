@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState } from 'react';
 import "../styles/signup.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import ApiUtils from "../utils/Api.utils";
+
 
 const SignupForm = () => {
+  
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate();
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+          await ApiUtils.signup({ username, email, password })
+          navigate("/login");
+      } catch (error) {
+        console.log(error)
+      }
+  }
+
+
   return (
     <>
       <div class="container">
@@ -10,13 +30,14 @@ const SignupForm = () => {
           <div class="btn">
             <button class="signUpBtn">Sign up</button>
           </div>
-          <form class="signUp" action="" method="get">
+          <form class="signUp" action="" method="get" onSubmit={handleSubmit}>
             <div class="formGroup">
               <input
                 type="text"
-                id="userName"
+                id="username"
                 placeholder="Username"
-                autocomplete="off"
+                onChange={e => setUsername(e.target.value)}
+                autoComplete="off"
               ></input>
             </div>
             <div class="formGroup">
@@ -24,8 +45,8 @@ const SignupForm = () => {
                 type="email"
                 placeholder="Email"
                 name="email"
-                required
-                autocomplete="off"
+                onChange={e => setEmail(e.target.value)}
+                autoComplete="off"
               ></input>
             </div>
             <div class="formGroup">
@@ -33,13 +54,13 @@ const SignupForm = () => {
                 type="password"
                 id="password"
                 placeholder="Password"
-                required
-                autocomplete="off"
+                onChange={e => setPassword(e.target.value)}
+                autoComplete="off"
               ></input>
             </div>
             <div class="formGroup"></div>
 
-            <button type="button" class="btn2">
+            <button type="submit" class="btn2" >
               REGISTER
             </button>
             <h4 className="account-text">Already have an account?</h4>
@@ -53,6 +74,6 @@ const SignupForm = () => {
       </div>
     </>
   );
-};
+}
 
 export default SignupForm;
