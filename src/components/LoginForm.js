@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState } from 'react';
 import '../styles/signup.css';
+import { useNavigate } from 'react-router-dom';
+import ApiUtils from "../utils/Api.utils";
 
 const LoginForm = () => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+          await ApiUtils.login({ email, password })
+          navigate("/profile");
+          console.log('We find your informations on our DB, continue')
+      } catch (error) {
+        throw new Error("You need to put a valid email and password, try again");
+      }
+  }
     
     return (
       <> 
@@ -10,7 +27,7 @@ const LoginForm = () => {
           <div class="btn">
             <button class="signUpBtn">Login</button>
           </div>
-          <form class="signUp" action="" method="get">
+          <form class="signUp" action="" method="get" onSubmit={handleSubmit}>
             <div class="formGroup">
             </div>
             <div class="formGroup">
@@ -18,7 +35,7 @@ const LoginForm = () => {
                 type="email"
                 placeholder="Email"
                 name="email"
-                required
+                onChange={e => setEmail(e.target.value)}
                 autocomplete="off"
               ></input>
             </div>
@@ -27,13 +44,13 @@ const LoginForm = () => {
                 type="password"
                 id="password"
                 placeholder="Password"
-                required
+                onChange={e => setPassword(e.target.value)}
                 autocomplete="off"
               ></input>
             </div>
             <div class="formGroup"></div>
 
-            <button type="button" class="btn2">
+            <button type="submit" class="btn2">
               ENTER
             </button>
             

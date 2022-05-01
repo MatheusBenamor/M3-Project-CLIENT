@@ -20,7 +20,7 @@ signup = async (signupInfo) => {
 //Login
 login = async (loginInfo) => {
     try {
-        const { data } = await this.api.post('/auth/login', loginInfo)
+        const { data } = await this.api.post("/auth/login", loginInfo)
         localStorage.setItem('token', data.token)
         return { data }
     } catch (error) {
