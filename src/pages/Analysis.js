@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../styles/analysis.css'
 //import WithHoverAndNoDelay from '../components/WithHoverNoDelay'
 import StrengthInfo from '../components/StrengthInfo'
@@ -6,7 +6,9 @@ import WeaknessInfo from '../components/WeaknessInfo'
 import OpportunitiesInfo from '../components/OpportunitiesInfo'
 import ThreatsInfo from '../components/ThreatsInfo'
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import CalculateAnalysis from '../components/CalculateAnalysis'
+import ApiUtils from "../utils/Api.utils";
 /*
 function myFunction() {
   const sumStrength = document.getElementById("inputStrength").value;
@@ -20,9 +22,28 @@ function myFunction() {
 */
 
 const Analysis = () => {
+
+  const [analysisName, setAnalysisName] = useState('')
+    const [strengths, setStrengths] = useState('')
+    const [weaknesses, setWeaknesses] = useState('')
+    const [opportunities, setOpportunities] = useState('')
+    const [threats, setThreats] = useState('')
+    const navigate = useNavigate();
+  
+    const addAnalysis = async (e) => {
+      e.preventDefault();
+      try {
+          await ApiUtils.createAnalysis({ analysisName, strengths, weaknesses, opportunities, threats})
+          navigate("/feedback");
+      } catch (error) {
+        console.log(error)
+      }
+  }
+
+
     return (
       <>
-      <form>
+      <form onSubmit={addAnalysis}>
       <div className='title-container'>
       <h1><input type="text" placeholder="            Analysis Name" className='input-title'></input></h1>
       </div>
