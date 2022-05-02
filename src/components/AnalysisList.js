@@ -27,6 +27,7 @@ const AnalysisList = () => {
       <div className="analysis-list" onSubmit={handleSubmit}>
       <h3>My Analysis</h3>
         <p onChange={e => setAnalysisName(e.target.value)}>Exemplo Análise Número 1</p>
+        <p>{analysisName}</p>
         <p>Exemplo Análise Número 2</p>
         <p>Exemplo Análise Número 3</p>
 

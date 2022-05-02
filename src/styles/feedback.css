@@ -1,0 +1,34 @@
+.feedback-container{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 700px;
+    border-radius: 5%;
+    border-style: ridge;
+    justify-content: flex-start;
+    align-items: center;
+        
+}
+
+.feedback-title{
+    display: flex;
+    justify-content: center;
+}
+
+.feedback-results{
+    display: flex;
+    justify-content: center;
+}
+
+.feedback-page{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.result-line{
+    border-color: #523A28;
+    border-style: ridge none none none;
+    width: 800px;
+}
