@@ -72,12 +72,18 @@ export default function WithText({ cb }) {
 
   return (
     <>
+    <div className="align-infos">
     <Wrapper>
+    <div>
       <h2 className="white-container">{explanation}</h2>
+      </div>
       </Wrapper>
       <Wrapper>
+      <div className="margin-left">
       <h2 className="white-container">{vantages}</h2>
+      </div>
     </Wrapper>
+    </div>
     </>
   );
 }

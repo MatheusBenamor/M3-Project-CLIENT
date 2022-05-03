@@ -31,3 +31,12 @@ body {
     margin-left: 70px;
     color:aliceblue;
 }
+
+.align-infos{
+    display: flex;
+    justify-content: row;
+}
+
+.margin-left {
+    margin-left: 50px;
+}
