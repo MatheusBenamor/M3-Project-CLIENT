@@ -34,6 +34,11 @@ const Analysis = () => {
       e.preventDefault();
       try {
           await ApiUtils.createAnalysis({ analysisName, strengths, weaknesses, opportunities, threats})
+          setAnalysisName(analysisName);
+          setStrengths(strengths);
+          setWeaknesses(weaknesses);
+          setOpportunities(opportunities);
+          setThreats(threats);
           navigate("/feedback");
       } catch (error) {
         console.log(error)
@@ -104,9 +109,14 @@ const Analysis = () => {
         </div>
         </section>
         
+        <div className='analysis-buts'>
         <Link to={`/feedback`}>
         <button type='submit' className='analysis-buttom'>SEND ANALYSIS AND CALCULATE RESULTS </button>
         </Link>
+        <Link to={`/profile`}>
+        <button type='submit' className='analysis-buttom'>SEE YOUR PROFILE </button>
+        </Link>
+        </div>
         <CalculateAnalysis></CalculateAnalysis>
         </form>
       </>

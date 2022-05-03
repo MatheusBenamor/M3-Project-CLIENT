@@ -68,9 +68,9 @@ createAnalysis = async (newAnalysis) => {
 }
 
 //User Analysis Names
-getUserAnalysisName = async () => {
+getUserAnalysisName = async (id) => {
     try{
-        const { data } = await this.api.get("/analysis")
+        const { data } = await this.api.get(`/analysis/${id}`)
         return data
     } catch (error){
         throw error
@@ -111,6 +111,15 @@ updateImage = async (file) => {
       imgData.append('image', file);
 
       const {data} = await this.api.put('/user/image', imgData);
+      return data;
+    } catch (error) {
+      throw error.response;
+    }
+  }
+
+  getFeedbacks = async () => {
+    try {
+      const {data} = await this.api.get('/feedback')
       return data;
     } catch (error) {
       throw error.response;

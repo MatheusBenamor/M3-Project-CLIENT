@@ -77,3 +77,8 @@ width: 25%;
     font-size: 16px;
     padding: 16px;
 }
+
+.analysis-buts{
+    display: flex;
+    justify-content: space-around;
+}
