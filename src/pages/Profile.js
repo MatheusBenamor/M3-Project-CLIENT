@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AnalysisList from "../components/AnalysisList";
 import "../styles/profile.css";
-import ApiUtils from "../utils/Api.utils";
+//import ApiUtils from "../utils/Api.utils";
 import UserProfile from '../components/UserProfile';
 import { useNavigate } from 'react-router-dom';
 
 
 const Profile = () => {
   const [ user, setUser ] = useState({});
-  const [ analysis, setAnalysis] = useState({});
+  //const [ analysis, setAnalysis] = useState({});
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  /*useEffect(() => {
     const getProfile = async () => {
       try {
         const user = await ApiUtils.getUser();
@@ -24,17 +24,17 @@ const Profile = () => {
     getProfile();
   }, [navigate])
 
-  useEffect(() => {
-    const getUserAnalysis = async () => {
+  /*useEffect(() => {
+    const getUserAnalysis = async (id) => {
       try {
-        const analysis = await ApiUtils.getUserAnalysisName();
+        const analysis = await ApiUtils.getUserAnalysisName(id);
         setAnalysis(analysis);
       } catch (error) {
         console.log(error);
       }
     }
     getUserAnalysis();
-  }, [navigate])
+  }, [navigate])*/
 
   return (
     <div className="page-container">
@@ -43,7 +43,7 @@ const Profile = () => {
       <UserProfile {...user} />
           </section>
           <section className="sec-2">
-          <AnalysisList {...analysis}/>
+          <AnalysisList/>
           </section>
         </div>
       </div>

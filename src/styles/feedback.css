@@ -7,7 +7,7 @@
     border-radius: 5%;
     border-style: ridge;
     justify-content: flex-start;
-    align-items: center;
+    
         
 }
 
@@ -31,4 +31,19 @@
     border-color: #523A28;
     border-style: ridge none none none;
     width: 800px;
+    margin-left: 200px;
+    align-items: center;
+}
+
+.feedback-butt{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.feedback-balls{
+    width: 40px;
+    height: 40px;
+    
+    
 }

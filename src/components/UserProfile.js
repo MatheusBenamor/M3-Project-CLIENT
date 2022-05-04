@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ApiUtils from "../utils/Api.utils";
 import "../styles/profile.css";
 
-const UserProfile = ({ _id, username, email, image }) => {
+const UserProfile = ({ username, email, image }) => {
   const [file, setFile] = useState();
   const [imageUrl, setImageUrl] = useState("");
 
