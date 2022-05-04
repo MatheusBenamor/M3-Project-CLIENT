@@ -28,7 +28,7 @@ const Feedback = () => {
   const safeFeedback = 'Great news, your analysis is Safe! Your analysis could work entirely perfect, just make sure you are examinating both internal and external factors and remember to apply your learnings at the right level in your organization. But before you go ahead, be sure to develop your ideas further. Good luck!';
   const moderateFeedback = 'Your analysis is consider Moderate. You are on the right track and your project can work, but your analysis is not entirely safe. Maybe you should look for improve even more your strenghts and figure out better ways to combat your weaknesses.';
   const riskyFeedback = 'Caution, based on the point that you assigned, your analysis is Risky, you should review and double check your decisions. Our suggestion is to reconsider your project and find out if there is a way to improve your weaknesses or make it happen at a more favorable time, if is the case that there are many external threats.';
-  const feedbackTotal = 15;
+  const feedbackTotal = 12;
   function CalculateAnalysis() {
 
     
