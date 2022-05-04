@@ -30,7 +30,7 @@ const Profile = () => {
   return (
     <div className="page-container">
         <div className="profile-container">
-      <section className='sec-1'>
+      <section>
       <UserProfile {...user} />
           </section>
           <section className="sec-2">

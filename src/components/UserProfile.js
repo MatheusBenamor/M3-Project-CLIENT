@@ -35,7 +35,7 @@ const UserProfile = ({ username, email, image }) => {
         {imageUrl ? (
           <>
             <img src={imageUrl} alt="new profile" className="profile-img" />
-            <button onClick={handleUpdateImg}>Update Image</button>
+            <button onClick={handleUpdateImg}>Save Image</button>
           </>
         ) : null}
       </div>

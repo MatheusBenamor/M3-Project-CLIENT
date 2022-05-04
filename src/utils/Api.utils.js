@@ -61,7 +61,8 @@ login = async (loginInfo) => {
 createAnalysis = async (newAnalysis) => {
     try{
         const { data } = await this.api.post("/analysis", newAnalysis)
-        return data
+        localStorage.setItem('token', data.token)
+        return { data }
     } catch (error){
         throw error
     }
