@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../styles/feedback.css'
-import ApiUtils from "../utils/Api.utils";
+//import ApiUtils from "../utils/Api.utils";
 import { Link } from "react-router-dom";
+//import { useNavigate } from 'react-router-dom';
+
 
 
 const Feedback = () => {
 
-  const [ feedbacks, setFeedbacks ] = useState([]);
+  //const [ user, setUser ] = useState({});
+  //const navigate = useNavigate();
+  /*const [ feedbacks, setFeedbacks ] = useState([]);
 
   useEffect(() => {
   const getFeedbacks = async () => {
@@ -18,7 +22,8 @@ const Feedback = () => {
     }
   }
     getFeedbacks();
-  }, [])
+  }, [])*/
+
 
     return (
       <>
@@ -30,7 +35,7 @@ const Feedback = () => {
       <div className='result-line'></div>
       <div className='feedback-results'>
       <h1>Results text goes here</h1>
-      <p>{feedbacks}</p>
+      <p></p>
       
       </div>
       <div className='feedback-butt'>

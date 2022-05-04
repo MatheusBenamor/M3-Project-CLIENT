@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AnalysisList from "../components/AnalysisList";
 import "../styles/profile.css";
-//import ApiUtils from "../utils/Api.utils";
+import ApiUtils from "../utils/Api.utils";
 import UserProfile from '../components/UserProfile';
 import { useNavigate } from 'react-router-dom';
+
 
 
 const Profile = () => {
@@ -12,29 +13,19 @@ const Profile = () => {
 
   const navigate = useNavigate();
 
-  /*useEffect(() => {
+  useEffect(() => {
     const getProfile = async () => {
       try {
-        const user = await ApiUtils.getUser();
+        const user = await ApiUtils.getProfile();
         setUser(user);
       } catch (error) {
         console.log(error);
+        navigate('/login');
       }
     }
     getProfile();
   }, [navigate])
-
-  /*useEffect(() => {
-    const getUserAnalysis = async (id) => {
-      try {
-        const analysis = await ApiUtils.getUserAnalysisName(id);
-        setAnalysis(analysis);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getUserAnalysis();
-  }, [navigate])*/
+  
 
   return (
     <div className="page-container">
@@ -50,6 +41,17 @@ const Profile = () => {
   )
 }
 
+/*useEffect(() => {
+    const getUserAnalysis = async (id) => {
+      try {
+        const analysis = await ApiUtils.getUserAnalysisName(id);
+        setAnalysis(analysis);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getUserAnalysis();
+  }, [navigate])*/
 
 export default Profile;
 
