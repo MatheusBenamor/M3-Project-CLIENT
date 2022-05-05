@@ -12,6 +12,7 @@ import ApiUtils from "../utils/Api.utils";
 const Analysis = () => {
 
   const [analysisName, setAnalysisName] = useState('')
+  const [analysisScore, setAnalysisScore] = useState('')
     
   //Strenghts
     const [strengths1, setStrengths1] = useState('')
@@ -111,7 +112,8 @@ const Analysis = () => {
                    threats4,
                    threatsRel4,
                     threats5,
-                    threatsRel5, })
+                    threatsRel5,
+                    analysisScore })
       } catch (error) {
         console.log(error)
       }
@@ -220,7 +222,8 @@ const Analysis = () => {
         
         <button type='submit' className='analysis-buttom'>SEND ANALYSIS AND CALCULATE RESULTS </button>
         <div className='score'>
-        <button className='analysis-buttom' id="result"></button>
+
+        <button className='analysis-buttom' id="result" onChange={e => setAnalysisScore(e.target.value)}></button>
         </div>
 
         <Link to={`/profile`}>

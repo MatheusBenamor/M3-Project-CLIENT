@@ -9,21 +9,6 @@ import { Link } from "react-router-dom";
 
 const Feedback = () => {
 
-  //const [ user, setUser ] = useState({});
-  //const navigate = useNavigate();
-  /*const [ feedbacks, setFeedbacks ] = useState([]);
-
-  useEffect(() => {
-  const getFeedbacks = async () => {
-    try {
-      const feedbacks = await ApiUtils.getFeedbacks();
-      setFeedbacks(feedbacks);
-    } catch (error) {
-      console.error('Error trying to give the feedback', error.status)
-    }
-  }
-    getFeedbacks();
-  }, [])*/
 
   const safeFeedback = 'Great news, your analysis is Safe! Your analysis could work entirely perfect, just make sure you are examinating both internal and external factors and remember to apply your learnings at the right level in your organization. But before you go ahead, be sure to develop your ideas further. Good luck!';
   const moderateFeedback = 'Your analysis is consider Moderate. You are on the right track and your project can work, but your analysis is not entirely safe. Maybe you should look for improve even more your strenghts and figure out better ways to combat your weaknesses.';
