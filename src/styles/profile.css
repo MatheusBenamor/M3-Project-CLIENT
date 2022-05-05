@@ -1,8 +1,8 @@
 .profile-container{
     background-color: aliceblue;
     display: flex;
-    width: 80%;
-    height: 600px;
+    width: 70%;
+    height: 500px;
     border-radius: 5%;
     border-style: ridge;
     justify-content: space-evenly;
@@ -11,7 +11,7 @@
 .page-container {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 20px;
     
 }
 
@@ -20,6 +20,8 @@
     width: 250px;
     border-radius: 50%;
     margin-top: 30px;
+    margin-bottom: 20px;
+    
 }
 
 .analysis-list {
@@ -35,3 +37,19 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.profile-container {
+    margin-top: 30px;
+}
+
+.profile-title {
+    padding: 25px;
+    width: 250px;
+    font-size: 18px;
+    border-style: ridge;
+    background-color: aliceblue;
+    font-size: 28px;
+    margin-left: 560px;
+    display: flex;
+    justify-content: center;
+    }

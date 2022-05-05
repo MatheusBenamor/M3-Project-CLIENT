@@ -28,6 +28,8 @@ const Profile = () => {
   
 
   return (
+     <>
+    <h1 className='profile-title'>PROFILE</h1>
     <div className="page-container">
         <div className="profile-container">
       <section>
@@ -38,6 +40,7 @@ const Profile = () => {
           </section>
         </div>
       </div>
+      </>
   )
 }
 

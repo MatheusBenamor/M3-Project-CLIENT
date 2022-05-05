@@ -30,21 +30,23 @@ const UserProfile = ({ username, email, image }) => {
   return (
     <>
       <div className='sec-1'>
-        
-        <input id="change-img" type="file" onChange={handleChangeImg} />
+      <div>
+        <img src={image} alt={username} className="profile-img"/>
+      </div>
+      <div>
+        <input id="change-img" type="file" onChange={handleChangeImg}/>
         {imageUrl ? (
           <>
-            <img src={imageUrl} alt="new profile" className="profile-img" />
+            <img src={imageUrl} alt="new profile" />
             <button onClick={handleUpdateImg}>Save Image</button>
           </>
         ) : null}
-      </div>
-      <div>
-        <img src={image} alt={username}/>
-      </div>
+      
       <h3>Username: {username}</h3>
           <h3>Email: {email}</h3>
           <h3>Change password</h3>
+          </div>
+          </div>
     </>
   );
 };
