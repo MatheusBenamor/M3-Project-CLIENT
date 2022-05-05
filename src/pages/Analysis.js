@@ -116,14 +116,45 @@ const Analysis = () => {
         console.log(error)
       }
 
-      //Onchange ou onsubmit -> fazer uma
-      //no final do input colocar igual o login onChange={e => setStrengths(e.target.value)}
   }
 
+  const calcular = () => {
+    const strength1 = Number(document.getElementById("strength1").value);
+    const strength2 = Number(document.getElementById("strength2").value);
+    const strength3 = Number(document.getElementById("strength3").value);
+    const strength4 = Number(document.getElementById("strength4").value);
+    const strength5 = Number(document.getElementById("strength5").value);
 
+    const opportunitties1 = Number(document.getElementById("opportunitties1").value);
+    const opportunitties2 = Number(document.getElementById("opportunitties2").value);
+    const opportunitties3 = Number(document.getElementById("opportunitties3").value);
+    const opportunitties4 = Number(document.getElementById("opportunitties4").value);
+    const opportunitties5 = Number(document.getElementById("opportunitties5").value);
+
+    const weakness1 = Number(document.getElementById("weakness1").value);
+    const weakness2 = Number(document.getElementById("weakness2").value);
+    const weakness3 = Number(document.getElementById("weakness3").value);
+    const weakness4 = Number(document.getElementById("weakness4").value);
+    const weakness5 = Number(document.getElementById("weakness5").value);
+
+    const threats1 = Number(document.getElementById("threats1").value);
+    const threats2 = Number(document.getElementById("threats2").value);
+    const threats3 = Number(document.getElementById("threats3").value);
+    const threats4 = Number(document.getElementById("threats4").value);
+    const threats5 = Number(document.getElementById("threats5").value);
+    const result = document.getElementById("result");
+
+    if (result.textContent === undefined) {
+        result.textContent = "Your Analysis Result is " + String(strength1 + strength2 + strength3 +strength4 +strength5 +opportunitties1 +opportunitties2 +opportunitties3 +opportunitties4 +opportunitties5 -weakness1 -weakness2 -weakness3 -weakness4 -weakness5 -threats1 -threats2 -threats3 -threats4 -threats5 );
+    }
+    else { // IE
+        result.innerText = "Your Analysis Result is " + String(strength1 + strength2 + strength3 +strength4 +strength5 +opportunitties1 +opportunitties2 +opportunitties3 +opportunitties4 +opportunitties5 -weakness1 -weakness2 -weakness3 -weakness4 -weakness5 -threats1 -threats2 -threats3 -threats4 -threats5);
+    }
+}
+  
     return (
       <>
-      <form onSubmit={addAnalysis}>
+      <form onSubmit={addAnalysis} onChange={calcular}>
       <div className='title-container'>
       <h1><input type="text" placeholder="            Analysis Name" className='input-title' onChange={e => setAnalysisName(e.target.value)}></input></h1>
       </div>
@@ -133,11 +164,11 @@ const Analysis = () => {
         <div className='color-blue'>
         <h3 className='margin-align'>Strenghts</h3>
         <ul>
-        <li><input type="text" placeholder="Strenghts" className='input-texting' onChange={e => setStrengths1(e.target.value)}/><input type="Number" placeholder="Relevance" min="1" max="5" className='input-score' id="inputStrength" onChange={e => setStrengthsRel1(e.target.value)}></input></li>
-        <li><input type="text" className='input-texting' onChange={e => setStrengths2(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputStrength" onChange={e => setStrengthsRel2(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setStrengths3(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputStrength" onChange={e => setStrengthsRel3(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setStrengths4(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputStrength" onChange={e => setStrengthsRel4(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setStrengths5(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputStrength" onChange={e => setStrengthsRel5(e.target.value)}/></li>
+        <li><input type="text" placeholder="Strenghts" className='input-texting' onChange={e => setStrengths1(e.target.value)}/><input type="Number" placeholder="Relevance" min="1" max="5" className='input-score' id="strength1" onBlur="calcular();" onChange={e => setStrengthsRel1(e.target.value)}></input></li>
+        <li><input type="text" className='input-texting' onChange={e => setStrengths2(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="strength2" onBlur="calcular();" onChange={e => setStrengthsRel2(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setStrengths3(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="strength3" onBlur="calcular();" onChange={e => setStrengthsRel3(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setStrengths4(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="strength4" onBlur="calcular();" onChange={e => setStrengthsRel4(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setStrengths5(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="strength5" onBlur="calcular();" onChange={e => setStrengthsRel5(e.target.value)}/></li>
         </ul>
         <div className='flex-end'><StrengthInfo></StrengthInfo></div>
         </div>
@@ -146,11 +177,11 @@ const Analysis = () => {
         <div className='color-yellow'>
         <h3 className='margin-align'>Weaknesses</h3>
         <ul>
-        <li><input type="text" placeholder="Weaknesses" className='input-texting' onChange={e => setWeaknesses1(e.target.value)}/><input type="Number" placeholder="Relevance" min="1" max="5" className='input-score' id="inputWeakness" onChange={e => setWeaknessesRel1(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setWeaknesses2(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputWeakness" onChange={e => setWeaknessesRel2(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setWeaknesses3(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputWeakness" onChange={e => setWeaknessesRel3(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setWeaknesses4(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputWeakness" onChange={e => setWeaknessesRel4(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setWeaknesses5(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputWeakness" onChange={e => setWeaknessesRel5(e.target.value)}/></li>
+        <li><input type="text" placeholder="Weaknesses" className='input-texting' onChange={e => setWeaknesses1(e.target.value)}/><input type="Number" placeholder="Relevance" min="1" max="5" className='input-score' id="weakness1" onBlur="calcular();" onChange={e => setWeaknessesRel1(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setWeaknesses2(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="weakness2" onBlur="calcular();" onChange={e => setWeaknessesRel2(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setWeaknesses3(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="weakness3" onBlur="calcular();" onChange={e => setWeaknessesRel3(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setWeaknesses4(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="weakness4" onBlur="calcular();" onChange={e => setWeaknessesRel4(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setWeaknesses5(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="weakness5" onBlur="calcular();" onChange={e => setWeaknessesRel5(e.target.value)}/></li>
         </ul>
         <div className='flex-end'><WeaknessInfo></WeaknessInfo></div>
         </div>
@@ -160,11 +191,11 @@ const Analysis = () => {
         <div className='color-green'>
         <h3 className='margin-align'>Opportunities</h3>
         <ul>
-        <li><input type="text" placeholder="Opportunities" className='input-texting' onChange={e => setOpportunities1(e.target.value)}></input><input type="Number" placeholder="Relevance" min="1" max="5" className='input-score' id="inputOpportunity" onChange={e => setOpportunitiesRel1(e.target.value)}/></li>
-        <li><input type="text" className='input-texting'  onChange={e => setOpportunities2(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputOpportunity" onChange={e => setOpportunitiesRel2(e.target.value)}/></li>
-        <li><input type="text" className='input-texting'  onChange={e => setOpportunities3(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputOpportunity" onChange={e => setOpportunitiesRel3(e.target.value)}/></li>
-        <li><input type="text" className='input-texting'  onChange={e => setOpportunities4(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputOpportunity" onChange={e => setOpportunitiesRel4(e.target.value)}/></li>
-        <li><input type="text" className='input-texting'  onChange={e => setOpportunities5(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputOpportunity" onChange={e => setOpportunitiesRel5(e.target.value)}/></li>
+        <li><input type="text" placeholder="Opportunities" className='input-texting' onChange={e => setOpportunities1(e.target.value)}></input><input type="Number" placeholder="Relevance" min="1" max="5" className='input-score' id="opportunitties1" onBlur="calcular();" onChange={e => setOpportunitiesRel1(e.target.value)}/></li>
+        <li><input type="text" className='input-texting'  onChange={e => setOpportunities2(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="opportunitties2" onBlur="calcular();" onChange={e => setOpportunitiesRel2(e.target.value)}/></li>
+        <li><input type="text" className='input-texting'  onChange={e => setOpportunities3(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="opportunitties3" onBlur="calcular();" onChange={e => setOpportunitiesRel3(e.target.value)}/></li>
+        <li><input type="text" className='input-texting'  onChange={e => setOpportunities4(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="opportunitties4" onBlur="calcular();" onChange={e => setOpportunitiesRel4(e.target.value)}/></li>
+        <li><input type="text" className='input-texting'  onChange={e => setOpportunities5(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="opportunitties5" onBlur="calcular();" onChange={e => setOpportunitiesRel5(e.target.value)}/></li>
         </ul>
         <div className='flex-end'><OpportunitiesInfo></OpportunitiesInfo></div>
         </div>
@@ -173,11 +204,11 @@ const Analysis = () => {
         <div className='color-red'>
         <h3 className='margin-align'>Threats</h3>
         <ul>
-        <li><input type="text" placeholder="Threats" className='input-texting' onChange={e => setThreats1(e.target.value)}></input><input type="Number" placeholder="Relevance" min="1" max="5" className='input-score' id="inputThreat" onChange={e => setThreatsRel1(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setThreats2(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputThreat" onChange={e => setThreatsRel2(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setThreats3(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputThreat" onChange={e => setThreatsRel3(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setThreats4(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputThreat" onChange={e => setThreatsRel4(e.target.value)}/></li>
-        <li><input type="text" className='input-texting' onChange={e => setThreats5(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="inputThreat" onChange={e => setThreatsRel5(e.target.value)}/></li>
+        <li><input type="text" placeholder="Threats" className='input-texting' onChange={e => setThreats1(e.target.value)}></input><input type="Number" placeholder="Relevance" min="1" max="5" className='input-score' id="threats1" onBlur="calcular();" onChange={e => setThreatsRel1(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setThreats2(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="threats2" onBlur="calcular();" onChange={e => setThreatsRel2(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setThreats3(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="threats3" onBlur="calcular();" onChange={e => setThreatsRel3(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setThreats4(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="threats4" onBlur="calcular();" onChange={e => setThreatsRel4(e.target.value)}/></li>
+        <li><input type="text" className='input-texting' onChange={e => setThreats5(e.target.value)}/><input type="Number" min="1" max="5" className='input-score' id="threats5" onBlur="calcular();" onChange={e => setThreatsRel5(e.target.value)}/></li>
         </ul>
         <div className='flex-end'><ThreatsInfo></ThreatsInfo></div>
         </div>
@@ -188,8 +219,10 @@ const Analysis = () => {
         
         
         <button type='submit' className='analysis-buttom'>SEND ANALYSIS AND CALCULATE RESULTS </button>
-        
-        
+        <div className='score'>
+        <button className='analysis-buttom' id="result"></button>
+        </div>
+
         <Link to={`/profile`}>
         <button type='submit' className='analysis-buttom'>SEE YOUR PROFILE </button>
         </Link>
