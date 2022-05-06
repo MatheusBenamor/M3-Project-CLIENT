@@ -4,6 +4,7 @@
 <img src="https://res.cloudinary.com/dqycgj4fq/image/upload/v1651003678/swot-analys-13_ycxkji.png" alt="SWOT COVER" />
 
 The SWOT project was created by two aspiring Web Developers, Matheus Benamor and Thais Fernandes, currently studying at the Ironhack's Bootcamp. Our main goal is to make a platform that helps our clients to plan their business or personal life using swot analysis as a tool to better organize this process.
+Deploy Link: [SWOT APP](https://swot-app.netlify.app/).
 
 Backend Repository: [API Repository](https://github.com/MatheusBenamor/M3-Project-API).
 
@@ -42,6 +43,6 @@ DELETE | /analysis/delete | { "email": string, "name": string } | { user,token }
 <b>Feedback routes</b> - Depending on the analysis results, the application will return a feedback based on the analysis risks.
 Method | Endpoint | Payload | Response | Action |
 --- | --- | --- | --- |--- |
- | - | - | - | - |
+ GET| /feedbacks | - | [feedbacks] | Get the feedback answers based on user's analysis score. |
 
 
