@@ -1,32 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import "../styles/signup.css";
 import { Link } from "react-router-dom";
 import ApiUtils from "../utils/Api.utils";
 
 //Esse componente vai trazer todas as análises do usuário específico.
 
-const AnalysisList = ( {analysisName} ) => {
+const AnalysisList = () => {
+  const [allAnalysis, setAllAnalysis] = useState([]);
 
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-          await ApiUtils.getUserAnalysisName({ analysisName })
-          
-      } catch (error) {
-        console.log(error)
-      }
-  }
+  const getAnalysis = async () => {
+    
+    try {
+      const analysisList = await ApiUtils.getUserAnalysis();
+      setAllAnalysis(analysisList);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAnalysis();
+    console.log('teste')
+  }, []);
 
   return (
     <>
-    
-      <div className="analysis-list" onSubmit={handleSubmit}>
-      <h3>My Analysis</h3>
-        <p>Exemplo Análise Número 1</p>
-        <p>{analysisName}</p>
-        <p>Exemplo Análise Número 2</p>
-        <p>Exemplo Análise Número 3</p>
+      <div className="analysis-list">
+        <h3>My Analysis</h3>
+        <ul>
+          {allAnalysis.map((analysis) => {
+            return <li key={analysis._id}>{analysis.analysisName}</li>;
+          })}
+        </ul>
 
         <Link to={`/analysis`}>
           <button type="submit">Create new Analysis</button>
