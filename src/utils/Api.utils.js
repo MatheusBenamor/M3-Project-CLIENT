@@ -78,14 +78,15 @@ getUserAnalysis = async () => {
         throw error
     }
 }
-/*getUserAnalysisName = async (id) => {
-    try{
-        const { data } = await this.api.get(`/analysis/${id}`)
-        return data
-    } catch (error){
-        throw error
-    }
-}*/
+
+//Deletar Analysis do user
+deleteAnalysis = async (_id) => {
+  try {
+      await this.api.delete(`/analysis/${_id}`)
+  } catch (error) {
+    throw error.response;
+  }
+}
 
 //User Profile
 getProfile = async (id) => {

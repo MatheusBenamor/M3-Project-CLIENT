@@ -5,7 +5,7 @@ import ApiUtils from "../utils/Api.utils";
 
 //Esse componente vai trazer todas as análises do usuário específico.
 
-const AnalysisList = () => {
+const AnalysisList = ({_id}) => {
   const [allAnalysis, setAllAnalysis] = useState([]);
 
   const getAnalysis = async () => {
@@ -18,8 +18,18 @@ const AnalysisList = () => {
     }
   };
 
+  const deleteAnalysis = async (id) => {
+
+    try {
+      await ApiUtils.deleteAnalysis(id);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
     getAnalysis();
+    deleteAnalysis();
     console.log('teste')
   }, []);
 
@@ -29,7 +39,7 @@ const AnalysisList = () => {
         <h3>My Analysis</h3>
         <ul>
           {allAnalysis.map((analysis) => {
-            return <li key={analysis._id}>{analysis.analysisName}</li>;
+            return <li key={analysis._id}>{analysis.analysisName} <button onClick={() => deleteAnalysis(_id)}>X</button></li>;
           })}
         </ul>
 

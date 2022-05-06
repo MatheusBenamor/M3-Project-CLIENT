@@ -42,7 +42,7 @@ export default function WithText({ cb }) {
       content={
         <div>
           <p>
-            SWOT stands for Strengths, Weaknesses, Opportunities, and Threats. This Analysis is a technique for assessing these four aspects of your bussiness in order to develop a strategic planning.
+            SWOT stands for Strengths, Weaknesses, Opportunities, and Threats.</p><p> This Analysis is a technique for assessing these four aspects of your bussiness in order to develop a strategic planning.
           </p>
         </div>
       }
@@ -70,6 +70,21 @@ export default function WithText({ cb }) {
     />
   );
 
+  const about = (
+    <FloaterFactory
+      cb={cb}
+      text="About the App"
+      content={
+        <div>
+          <p>
+          The SWOT project was created by two aspiring Web Developers Matheus Benamor and Thais Fernandes.</p>
+          <p>  Our main goal is to make a platform that helps our clients to plan their business or personal life using swot analysis as a tool to better organize this process.</p>
+          
+        </div>
+      }
+    />
+  );
+
   return (
     <>
     <div className="align-infos">
@@ -81,6 +96,11 @@ export default function WithText({ cb }) {
       <Wrapper>
       <div className="margin-left">
       <h2 className="white-container">{vantages}</h2>
+      </div>
+    </Wrapper>
+    <Wrapper>
+      <div className="margin-left">
+      <h2 className="white-container">{about}</h2>
       </div>
     </Wrapper>
     </div>
