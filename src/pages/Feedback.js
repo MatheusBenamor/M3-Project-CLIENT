@@ -37,9 +37,9 @@ const Feedback = ({ analysisScore }) => {
               Points.
             </h2>
             <h3>
-              <CalculateAnalysis></CalculateAnalysis>
+              
             </h3>
-            <h4>{CalculateAnalysis()}</h4>
+            <h3>{CalculateAnalysis()}</h3>
           </div>
           <div className="feedback-butt">
             <img

@@ -7,11 +7,13 @@ import ThreatsInfo from '../components/ThreatsInfo'
 import { Link } from "react-router-dom";
 import CalculateAnalysis from '../components/CalculateAnalysis'
 import ApiUtils from "../utils/Api.utils";
+import { useNavigate } from 'react-router-dom';
 
 
 const Analysis = ( {analysisScore, setAnalysisScore} ) => {
 
   const [analysisName, setAnalysisName] = useState('')
+  const navigate = useNavigate();
     
   //Strenghts
     const [strengths1, setStrengths1] = useState('')
@@ -113,6 +115,7 @@ const Analysis = ( {analysisScore, setAnalysisScore} ) => {
                     threats5,
                     threatsRel5,
                     analysisScore })
+                    navigate("/feedback");
       } catch (error) {
         console.log(error)
       }
@@ -143,16 +146,11 @@ const Analysis = ( {analysisScore, setAnalysisScore} ) => {
     const threats3 = Number(document.getElementById("threats3").value);
     const threats4 = Number(document.getElementById("threats4").value);
     const threats5 = Number(document.getElementById("threats5").value);
-    //const result = document.getElementById("result");
+    
 
     const score = strength1 + strength2 + strength3 +strength4 +strength5 +opportunitties1 +opportunitties2 +opportunitties3 +opportunitties4 +opportunitties5 -weakness1 -weakness2 -weakness3 -weakness4 -weakness5 -threats1 -threats2 -threats3 -threats4 -threats5;
     setAnalysisScore(score)
-    /*if (result.textContent === undefined) {
-        result.textContent = "Your Analysis Result is " + String(score);
-    }
-    else { // IE
-        result.innerText = "Your Analysis Result is " + String(score);
-    }*/
+    
 }
   
     return (
@@ -220,12 +218,10 @@ const Analysis = ( {analysisScore, setAnalysisScore} ) => {
         
         <div className='analysis-buts'>
         
-        
-        <button type='submit' className='analysis-buttom'>SEND ANALYSIS AND CALCULATE RESULTS </button>
         <div className='score'>
-        <Link to={`/feedback`}>
-        <button className='analysis-buttom' id="result" >Your Analysis Result is {analysisScore}</button>
-        </Link>
+        
+        <button type='submit' className='analysis-buttom' id="result" >CLICK TO SAVE AND SEE THE FEEDBACK</button>
+        <button className='analysis-buttom2'>YOUR ANALYSIS RESULT IS {analysisScore}</button>
         </div>
 
         <Link to={`/profile`}>

@@ -78,6 +78,12 @@ width: 25%;
     padding: 16px;
 }
 
+.analysis-buttom2{
+    font-size: 16px;
+    padding: 16px;
+    margin-left: 70px;
+}
+
 .analysis-buts{
     display: flex;
     justify-content: space-evenly;
