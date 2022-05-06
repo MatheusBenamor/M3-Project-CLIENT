@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const [ user, setUser ] = useState({});
-  //const [ analysis, setAnalysis] = useState({});
+  const [ analysis, setAnalysis] = useState({});
 
   const navigate = useNavigate();
 
@@ -26,6 +26,17 @@ const Profile = () => {
     getProfile();
   }, [navigate])
   
+  useEffect(() => {
+    const getUserAnalysis = async () => {
+      try {
+        const analysis = await ApiUtils.getUserAnalysisName();
+        setAnalysis(analysis);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getUserAnalysis();
+  }, [navigate])
 
   return (
      <>
@@ -36,7 +47,7 @@ const Profile = () => {
       <UserProfile {...user} />
           </section>
           <section className="sec-2">
-          <AnalysisList/>
+          <AnalysisList {...analysis}/>
           </section>
         </div>
       </div>
@@ -44,17 +55,6 @@ const Profile = () => {
   )
 }
 
-/*useEffect(() => {
-    const getUserAnalysis = async (id) => {
-      try {
-        const analysis = await ApiUtils.getUserAnalysisName(id);
-        setAnalysis(analysis);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getUserAnalysis();
-  }, [navigate])*/
 
 export default Profile;
 

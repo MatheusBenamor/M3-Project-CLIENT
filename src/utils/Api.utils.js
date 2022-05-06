@@ -69,9 +69,9 @@ createAnalysis = async (newAnalysis) => {
 }
 
 //User Analysis Names
-getUserAnalysisName = async () => {
+getUserAnalysisName = async (id) => {
     try{
-        const { data } = await this.api.get("/analysis")
+        const { data } = await this.api.get(`/analysis/${id}`)
         return data
     } catch (error){
         throw error

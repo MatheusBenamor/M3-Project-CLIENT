@@ -9,10 +9,9 @@ import CalculateAnalysis from '../components/CalculateAnalysis'
 import ApiUtils from "../utils/Api.utils";
 
 
-const Analysis = () => {
+const Analysis = ( {analysisScore, setAnalysisScore} ) => {
 
   const [analysisName, setAnalysisName] = useState('')
-  const [analysisScore, setAnalysisScore] = useState('')
     
   //Strenghts
     const [strengths1, setStrengths1] = useState('')
@@ -121,7 +120,7 @@ const Analysis = () => {
   }
 
   const calcular = () => {
-    const strength1 = Number(document.getElementById("strength1").value);
+    const strength1 = Number(strengthsRel1);
     const strength2 = Number(document.getElementById("strength2").value);
     const strength3 = Number(document.getElementById("strength3").value);
     const strength4 = Number(document.getElementById("strength4").value);
@@ -144,14 +143,16 @@ const Analysis = () => {
     const threats3 = Number(document.getElementById("threats3").value);
     const threats4 = Number(document.getElementById("threats4").value);
     const threats5 = Number(document.getElementById("threats5").value);
-    const result = document.getElementById("result");
+    //const result = document.getElementById("result");
 
-    if (result.textContent === undefined) {
-        result.textContent = "Your Analysis Result is " + String(strength1 + strength2 + strength3 +strength4 +strength5 +opportunitties1 +opportunitties2 +opportunitties3 +opportunitties4 +opportunitties5 -weakness1 -weakness2 -weakness3 -weakness4 -weakness5 -threats1 -threats2 -threats3 -threats4 -threats5 );
+    const score = strength1 + strength2 + strength3 +strength4 +strength5 +opportunitties1 +opportunitties2 +opportunitties3 +opportunitties4 +opportunitties5 -weakness1 -weakness2 -weakness3 -weakness4 -weakness5 -threats1 -threats2 -threats3 -threats4 -threats5;
+    setAnalysisScore(score)
+    /*if (result.textContent === undefined) {
+        result.textContent = "Your Analysis Result is " + String(score);
     }
     else { // IE
-        result.innerText = "Your Analysis Result is " + String(strength1 + strength2 + strength3 +strength4 +strength5 +opportunitties1 +opportunitties2 +opportunitties3 +opportunitties4 +opportunitties5 -weakness1 -weakness2 -weakness3 -weakness4 -weakness5 -threats1 -threats2 -threats3 -threats4 -threats5);
-    }
+        result.innerText = "Your Analysis Result is " + String(score);
+    }*/
 }
   
     return (
@@ -222,8 +223,9 @@ const Analysis = () => {
         
         <button type='submit' className='analysis-buttom'>SEND ANALYSIS AND CALCULATE RESULTS </button>
         <div className='score'>
-
-        <button className='analysis-buttom' id="result" onChange={e => setAnalysisScore(e.target.value)}></button>
+        <Link to={`/feedback`}>
+        <button className='analysis-buttom' id="result" >Your Analysis Result is {analysisScore}</button>
+        </Link>
         </div>
 
         <Link to={`/profile`}>
