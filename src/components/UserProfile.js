@@ -44,7 +44,6 @@ const UserProfile = ({ username, email, image }) => {
       
       <h3>Username: {username}</h3>
           <h3>Email: {email}</h3>
-          <h3>Change password</h3>
           </div>
           </div>
     </>

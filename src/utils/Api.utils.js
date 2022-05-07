@@ -80,9 +80,10 @@ getUserAnalysis = async () => {
 }
 
 //Deletar Analysis do user
-deleteAnalysis = async (_id) => {
+deleteAnalysis = async (analysisId) => {
   try {
-      await this.api.delete(`/analysis/${_id}`)
+    const { data } = await this.api.delete(`/analysis/${analysisId}`)
+    return data
   } catch (error) {
     throw error.response;
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import Floater from "react-floater";
 import styled from "styled-components";
-import ('../styles/home.css')
+import("../styles/home.css");
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -42,7 +42,12 @@ export default function WithText({ cb }) {
       content={
         <div>
           <p>
-            SWOT stands for Strengths, Weaknesses, Opportunities, and Threats.</p><p> This Analysis is a technique for assessing these four aspects of your bussiness in order to develop a strategic planning.
+            SWOT stands for Strengths, Weaknesses, Opportunities, and Threats.
+          </p>
+          <p>
+            {" "}
+            This Analysis is a technique for assessing these four aspects of
+            your bussiness in order to develop a strategic planning.
           </p>
         </div>
       }
@@ -55,16 +60,14 @@ export default function WithText({ cb }) {
       text="Benefits"
       content={
         <div>
-          
           <ul>
-          <li>Understand your business better</li>
-          <li>Be aware of your weaknesses</li>
-          <li>Prevent possible threats</li>
-          <li>Capitalise on opportunities</li>
-          <li>Take full advantage of your strengths</li>
-          <li>Develop business goals and strategies for achieving them</li>
-         </ul>
-          
+            <li>Understand your business better</li>
+            <li>Be aware of your weaknesses</li>
+            <li>Prevent possible threats</li>
+            <li>Capitalise on opportunities</li>
+            <li>Take full advantage of your strengths</li>
+            <li>Develop business goals and strategies for achieving them</li>
+          </ul>
         </div>
       }
     />
@@ -77,9 +80,15 @@ export default function WithText({ cb }) {
       content={
         <div>
           <p>
-          The SWOT project was created by two aspiring Web Developers Matheus Benamor and Thais Fernandes.</p>
-          <p>  Our main goal is to make a platform that helps our clients to plan their business or personal life using swot analysis as a tool to better organize this process.</p>
-          
+            The SWOT project was created by two aspiring Web Developers Matheus
+            Benamor and Thais Fernandes.
+          </p>
+          <p>
+            {" "}
+            Our main goal is to make a platform that helps our clients to plan
+            their business or personal life using swot analysis as a tool to
+            better organize this process.
+          </p>
         </div>
       }
     />
@@ -87,23 +96,23 @@ export default function WithText({ cb }) {
 
   return (
     <>
-    <div className="align-infos">
-    <Wrapper>
-    <div>
-      <h2 className="white-container">{explanation}</h2>
+      <div className="align-infos">
+        <Wrapper>
+          <div>
+            <h2 className="white-container">{explanation}</h2>
+          </div>
+        </Wrapper>
+        <Wrapper>
+          <div className="margin-left">
+            <h2 className="white-container">{vantages}</h2>
+          </div>
+        </Wrapper>
+        <Wrapper>
+          <div className="margin-left">
+            <h2 className="white-container">{about}</h2>
+          </div>
+        </Wrapper>
       </div>
-      </Wrapper>
-      <Wrapper>
-      <div className="margin-left">
-      <h2 className="white-container">{vantages}</h2>
-      </div>
-    </Wrapper>
-    <Wrapper>
-      <div className="margin-left">
-      <h2 className="white-container">{about}</h2>
-      </div>
-    </Wrapper>
-    </div>
     </>
   );
 }
