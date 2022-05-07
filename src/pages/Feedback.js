@@ -8,14 +8,15 @@ const Feedback = ({ analysisScore }) => {
   const safeFeedback =
     "Great news, your analysis is Safe! Your analysis could work entirely perfect, just make sure you are examinating both internal and external factors and remember to apply your learnings at the right level in your organization. But before you go ahead, be sure to develop your ideas further. Good luck!";
   const moderateFeedback =
-    "Your analysis is consider Moderate. You are on the right track and your project can work, but your analysis is not entirely safe. Maybe you should look for improve even more your strenghts and figure out better ways to combat your weaknesses.";
+    "Your analysis is consider Moderate. You are on the right track and your project can work, but your analysis is not entirely safe. Maybe you should look for improve even more your strenghts and figure out better ways to combat your weaknesses and prevent against possible threats.";
+    
   const riskyFeedback =
     "Caution, based on the point that you assigned, your analysis is Risky, you should review and double check your decisions. Our suggestion is to reconsider your project and find out if there is a way to improve your weaknesses or make it happen at a more favorable time, if is the case that there are many external threats.";
   const feedbackTotal = analysisScore ;
   function CalculateAnalysis() {
-      if (feedbackTotal <= 15) {
+      if (feedbackTotal <= 10) {
         return riskyFeedback;
-      } else if (feedbackTotal >= 16 && feedbackTotal <= 30) {
+      } else if (feedbackTotal >= 11 && feedbackTotal <= 20) {
         return moderateFeedback;
       } else {
         return safeFeedback;
@@ -47,19 +48,19 @@ const Feedback = ({ analysisScore }) => {
               src="http://www.clker.com/cliparts/2/9/b/8/1194984775760075334button-green_benji_park_01.svg.med.png"
               alt="safe-analysis-img"
             ></img>
-            <h3>Safe analysis: 31 - 50</h3>
+            <h3>Safe analysis: 21 - 40</h3>
             <img
               className="feedback-balls"
               src="http://www.clker.com/cliparts/d/2/f/f/119498475734514785button-yellow_benji_park_01.svg.med.png"
               alt="safe-analysis-img"
             ></img>
-            <h3>Moderate analysis: 16 - 30</h3>
+            <h3>Moderate analysis: 11 - 20</h3>
             <img
               className="feedback-balls"
               src="http://www.clker.com/cliparts/9/1/5/2/119498475589498995button-red_benji_park_01.svg.med.png"
               alt="safe-analysis-img"
             ></img>
-            <h3>Risky analysis: 0 - 15</h3>
+            <h3>Risky analysis: 0 - 10</h3>
             <Link to={`/profile`}>
               <button type="submit" className="analysis-buttom">
                 See your Profile{" "}
